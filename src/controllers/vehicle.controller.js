@@ -1,4 +1,5 @@
 const {db, collectionName} = require('../services/firebase.js');
+import { serverTimestamp } from "firebase/firestore";
 
 const getVehicles = async (_req,res) =>{
     try {    
@@ -26,7 +27,7 @@ const getVehicle = async (req, res) =>{
 const setNewVechicle = async (req, res) => {
     try{
         const {brand, model, year} = req.body;
-        const timestamp = Date.now();
+        const timestamp = serverTimestamp();
         await db.collection(collectionName).add({
             brand,
             model,
