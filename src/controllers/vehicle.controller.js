@@ -30,7 +30,7 @@ const setNewVechicle = async (req, res) => {
         await db.collection(collectionName).add({
             brand,
             model,
-            year,
+            year: parseInt(year),
             timestamp,
             deleted: false,
         })
