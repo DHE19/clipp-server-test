@@ -1,5 +1,5 @@
 const {db, collectionName} = require('../services/firebase.js');
-import { serverTimestamp } from "firebase/firestore";
+const { serverTimestamp } = require( 'firebase/firestore');
 
 const getVehicles = async (_req,res) =>{
     try {    
